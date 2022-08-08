@@ -14,6 +14,10 @@ void M_TWI_void_Init(void)
 #if   TWI_MODE   ==   TWI_MASTER_MODE
 	TWBR_REG = (((F_OSC * 1000000) / F_SCL) - 16) / 2;
 #elif TWI_MODE   ==   TWI_SLAVE_MODE
+
+fvnbdfjvbdfvdfv
+fdvdfvdf
+v
 	TWAR_REG = (SLAVE_ADDRESS << 1) | GENERAL_CALL;
 #endif
 	SET_BIT(TWCR_REG,TWEN);

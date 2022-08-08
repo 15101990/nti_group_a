@@ -17,14 +17,6 @@ void M_TWI_void_Init(void)
 	TWAR_REG = (SLAVE_ADDRESS << 1) | GENERAL_CALL;
 #endif
 	SET_BIT(TWCR_REG,TWEN);
-}
-void M_TWI_void_StartCondition(void)
-{
-	SET_BIT(TWCR_REG,TWINT);   /* to clear the flag */
-	SET_BIT(TWCR_REG,TWSTA);
-	while(GET_BIT(TWCR_REG,TWINT) == 0);
-	while((TWSR_REG & 0xF8) != TWI_START_COND_ACK);
-}
 void M_TWI_void_StopCondition(void)
 {
 	SET_BIT(TWCR_REG,TWSTO);
